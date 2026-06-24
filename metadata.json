@@ -1,0 +1,6 @@
+{
+  "name": "MyScalper",
+  "description": "A premium neomorphic platform connecting world-class freelance talent with forward-thinking companies.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

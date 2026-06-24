@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-headline: "EB Garamond", serif;
+  --font-display: "EB Garamond", serif;
+  --font-body: "Plus Jakarta Sans", sans-serif;
+  --font-label: "Plus Jakarta Sans", sans-serif;
+
+  --color-primary: var(--color-primary);
+  --color-primary-hover: var(--color-primary-hover);
+  --color-primary-container: var(--color-primary-container);
+  --color-on-primary-container: var(--color-on-primary-container);
+  --color-tertiary: var(--color-tertiary);
+  --color-tertiary-container: var(--color-tertiary-container);
+  --color-on-tertiary-container: var(--color-on-tertiary-container);
+  --color-secondary: var(--color-secondary);
+  --color-on-surface: var(--color-on-surface);
+  --color-on-surface-variant: var(--color-on-surface-variant);
+  --color-outline: var(--color-outline);
+  --color-outline-variant: var(--color-outline-variant);
+}
+
+/* Custom CSS Variables for Themes */
+.theme-cool {
+  --bg-surface: #0f0f0f;
+  --bg-surface-dim: #0a0a0a;
+  --bg-surface-bright: #161616;
+  --bg-container: #161616;
+  --bg-container-low: #111111;
+  --bg-container-high: #1c1c1c;
+  --bg-container-highest: #262626;
+  --bg-container-lowest: #0a0a0a;
+  --color-primary: #c5a059;
+  --color-primary-hover: #dab66e;
+  --color-primary-container: #1f1d17;
+  --color-on-primary-container: #c5a059;
+  --color-tertiary: #e0e0d6;
+  --color-tertiary-container: #262626;
+  --color-on-tertiary-container: #e0e0d6;
+  --color-secondary: #8a8a82;
+  --color-on-surface: #e0e0d6;
+  --color-on-surface-variant: #a2a299;
+  --color-outline: rgba(224, 224, 214, 0.15);
+  --color-outline-variant: rgba(224, 224, 214, 0.08);
+  --border-frame: #161616;
+  
+  /* Precision Editorial Shadow and Border styles */
+  --shadow-raised: 0 4px 20px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(224, 224, 214, 0.1);
+  --shadow-inset: inset 0 2px 6px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(224, 224, 214, 0.05);
+  --shadow-raised-sm: 0 2px 8px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(224, 224, 214, 0.07);
+  --shadow-inset-sm: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.theme-warm {
+  --bg-surface: #f4f3ef;
+  --bg-surface-dim: #eae9e2;
+  --bg-surface-bright: #faf9f6;
+  --bg-container: #faf9f6;
+  --bg-container-low: #faf9f6;
+  --bg-container-high: #e7e5dd;
+  --bg-container-highest: #dcd9ce;
+  --bg-container-lowest: #ffffff;
+  --color-primary: #a37e3e;
+  --color-primary-hover: #896931;
+  --color-primary-container: #faf5eb;
+  --color-on-primary-container: #5c451f;
+  --color-tertiary: #1c1c19;
+  --color-tertiary-container: #efece5;
+  --color-on-tertiary-container: #1c1c19;
+  --color-secondary: #75736c;
+  --color-on-surface: #1c1c19;
+  --color-on-surface-variant: #5e5c54;
+  --color-outline: rgba(28, 28, 25, 0.15);
+  --color-outline-variant: rgba(28, 28, 25, 0.08);
+  --border-frame: #eae9e2;
+  
+  /* Precision Editorial Shadow and Border styles for warm linen paper */
+  --shadow-raised: 0 6px 24px rgba(28, 28, 25, 0.04), 0 0 0 1px rgba(28, 28, 25, 0.08);
+  --shadow-inset: inset 0 2px 4px rgba(28, 28, 25, 0.03), 0 0 0 1px rgba(28, 28, 25, 0.04);
+  --shadow-raised-sm: 0 2px 8px rgba(28, 28, 25, 0.02), 0 0 0 1px rgba(28, 28, 25, 0.05);
+  --shadow-inset-sm: inset 0 1px 2px rgba(28, 28, 25, 0.02);
+}
+
+/* Global styles binding to variables */
+body {
+  background-color: var(--bg-surface);
+  color: var(--color-on-surface);
+}
+
+.bg-neo-surface {
+  background-color: var(--bg-surface);
+}
+
+.neo-shadow-raised {
+  box-shadow: var(--shadow-raised);
+}
+
+.neo-shadow-inset {
+  box-shadow: var(--shadow-inset);
+}
+
+.neo-shadow-raised-sm {
+  box-shadow: var(--shadow-raised-sm);
+}
+
+.neo-shadow-inset-sm {
+  box-shadow: var(--shadow-inset-sm);
+}
+
+/* Smooth transitions */
+.neo-transition {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(-5%);
+    animation-timing-function: cubic-bezier(0.8,0,1,1);
+  }
+  50% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0,0,0.2,1);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 3s infinite;
+}
